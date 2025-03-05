@@ -11,6 +11,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+
 import { useSelection } from '@/hooks/use-selection';
 
 function noop(): void {
@@ -18,7 +19,7 @@ function noop(): void {
 }
 
 interface DataTableProps<T> {
-  columns: { key: keyof T; label: string; render?: (value: T, row: T) => React.ReactNode }[];
+  columns: { key: keyof T; label: string; render?: (value: T[keyof T], row: T) => React.ReactNode }[];
   rows: T[];
   count: number;
   page: number;
@@ -85,7 +86,7 @@ export function DataTable<T extends { id: string }>({
                   </TableCell>
                   {columns.map((column) => (
                     <TableCell key={column.key as string}>
-                      {column.render ? column.render(row[column.key], row) : row[column.key]}
+                      {column.render ? column.render(row[column.key], row) : (row[column.key] as React.ReactNode)}
                     </TableCell>
                   ))}
                 </TableRow>

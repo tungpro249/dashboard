@@ -14,6 +14,7 @@ import { Bell as BellIcon } from '@phosphor-icons/react/dist/ssr/Bell';
 import { Lock as LockIcon } from '@phosphor-icons/react/dist/ssr/Lock';
 import { SignOut as SignOutIcon } from '@phosphor-icons/react/dist/ssr/SignOut';
 import { Cube as CubeIcon } from '@phosphor-icons/react/dist/ssr/Cube';
+import { X as CloseIcon } from '@phosphor-icons/react/dist/ssr/X';
 import { MatrixLogo } from '@phosphor-icons/react/dist/ssr/MatrixLogo';
 
 export const navIcons = {
@@ -32,5 +33,6 @@ export const navIcons = {
   bell: BellIcon, // Thông báo
   lock: LockIcon, // Cài đặt bảo mật
   'sign-out': SignOutIcon, // Đăng xuất
-  brand: MatrixLogo 
+  brand: MatrixLogo ,
+  close: CloseIcon
 } as Record<string, Icon>;
